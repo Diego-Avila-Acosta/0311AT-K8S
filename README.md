@@ -32,7 +32,7 @@ minikube start --mount --mount-string="${PWD}/static-website:/mnt/static-website
 4. Aplicamos los manifiestos del primer repositorio clonado:
 
 ```bash
-kubectl apply -f 0311AT-K8S/manifests/.
+kubectl apply -R -f 0311AT-K8S/manifests/.
 ```
 
 5. Ejecutamos el siguiente comando para acceder al servicio
