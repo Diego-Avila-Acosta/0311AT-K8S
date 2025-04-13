@@ -6,5 +6,5 @@ spec:
     accessModes:
         -   ReadOnlyMany
     resources:
-        request:
+        requests:
             storage: 1Gi
