@@ -9,4 +9,4 @@ spec:
     -   ReadOnlyMany
     storageClassName: ""
     hostPath:
-        path: "/mnt/static-web"
+        path: "/mnt/static-website"
