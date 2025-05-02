@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -e
+set -o pipefail
+
 verify_dependecies(){
 	if ! which $1 > /dev/null; then
 		echo "Error: Se requiere '$1' pero no está instalado o no está en el PATH." >&2
