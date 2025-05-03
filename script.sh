@@ -3,6 +3,18 @@
 set -e
 set -o pipefail
 
+# ----------------------------------------------------------------
+# Script de despliegue de página web estatica en Kubernetes
+# Autor: Avila Diego
+# Fecha: Mayo 2025
+# Descripción:
+# Este script realiza un despliegue de una página web estatica en un cluster de kubernetes local usando Minikube.
+# Uso:
+#	./script.sh [WEBSITE_URL]
+#
+# WEBSITE_URL = URL del repositorio de la página web estatica (Opcional)
+# ----------------------------------------------------------------
+
 SCRIPT_DIR="$(dirname "$0")"
 PROJECT_URL="${PWD}/static-website"
 
