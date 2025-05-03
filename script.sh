@@ -33,3 +33,17 @@ else
 	echo "Repositorio ya existente. Actualizando"
 	cd "static-website" && git pull && cd ..
 fi
+
+# Se crea el cluster si no existe. Si existe se lo borra y se crea nuevamente"
+if ! minikube status --profile=web-deploy > /dev/null 2>/dev/null; then
+	echo "Creando cluster de minikube"
+	minikube start --profile=web-deploy --mount --mount-string="$PROJECT_URL:/mnt/static-website"
+else
+	echo "Borrando cluster de minikube"
+	minikube delete --profile=web-deploy && echo "Cluster borrado correctamente"
+	echo "Creando cluster de minikube"
+	minikube start --profile=web-deploy --mount --mount-string="$PROJECT_URL:/mnt/static-website"
+fi
+
+#Aplicamos manifiestos
+kubectl apply -R -f "$SCRIPT_DIR/manifests/."
