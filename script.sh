@@ -47,3 +47,6 @@ fi
 
 #Aplicamos manifiestos
 kubectl apply -R -f "$SCRIPT_DIR/manifests/."
+
+echo "Script ejecutado correctamente"
+echo "Para empezar a desarrollar, espere unos minutos y ejecute el comando: minikube service --profile=web-deploy nginx-service"
